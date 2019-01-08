@@ -6,16 +6,23 @@
 #define DIJKSTRA_SOMMET_H
 
 #include <map>
+using namespace std;
 
-template < Classe C > class Sommet {
-private
-    C val;
-    map <C,int> listadj;
+template <class C> class Sommet {
 public:
-    void ajouterAdj();
+    C val;
+    map<Sommet, int> listAdj;
+    void ajout(Sommet,int);
+    void ajouterAdj(Sommet,int);
+    map<Sommet,int> getMap() const;
+    void ajouterArete();
+    void detruireSommet();
+    void detruiteArete();
+    void afficher();
     Sommet(C);
 
-};
 
+
+};
 
 #endif //DIJKSTRA_SOMMET_H

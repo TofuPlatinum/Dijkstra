@@ -11,10 +11,10 @@ using namespace std;
 template <class C> class Sommet {
 public:
     C val;
-    map<Sommet, int> listAdj;
+    map<char, int> listAdj;
     void ajout(Sommet,int);
     void ajouterAdj(Sommet,int);
-    map<Sommet,int> getMap() const;
+    map<char,int> getMap() const;
     void ajouterArete();
     void detruireSommet();
     void detruiteArete();

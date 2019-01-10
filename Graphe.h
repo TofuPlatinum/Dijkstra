@@ -10,10 +10,13 @@
 #include <string.h>
 #include <list>
 
-template < Classe C > class Graphe {
-private:
-
+template < Class C > class Graphe {
 public:
+    vector <Sommet<C>> sommets;
+    void ajouterArete(Sommet s,Sommet s2, int poids);
+    void afficher();
+    //ostream& operator << (ostream&, Graphe g);
+    void ajouterSommet(Sommet s);
 
 };
 

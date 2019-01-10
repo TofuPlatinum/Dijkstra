@@ -7,26 +7,26 @@
 
 #include <iostream>
 #include <map>
-using namespace std;
 
-template <class C> class Sommet {
+using namespace std;
+template < class C > class Sommet {
+
 public:
     C val;
-    map<Sommet<char>, int> listAdj;
+    map<Sommet<C>, int> listAdj;
     void ajout(Sommet,int);
     void ajouterAdj(Sommet,int);
-    map<Sommet<char>,int> getMap() const;
+    map<Sommet<C>,int> getMap() const;
     bool operator <(const Sommet&);
     //friend ostream& operator <<(ostream&, map<Sommet<C>,int> );
-   //friend bool operator <(const Sommet&, const Sommet&);
-    void ajouterArete();
+    //ostream& operator <<(ostream&, Sommet<C>);
+    //friend bool operator <(const Sommet&, Sommet&);
+    Sommet(C v);
+
     void detruireSommet();
-    void detruiteArete();
+    void detruireArete();
     void afficher();
-    Sommet(C);
-
-
-
 };
+
 
 #endif //DIJKSTRA_SOMMET_H

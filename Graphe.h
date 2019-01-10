@@ -10,17 +10,14 @@
 #include <string.h>
 #include <list>
 
-template < class C > class Graphe {
-private:
-    list<C> tasdemerde;
-    String type;
-
+template < Class C > class Graphe {
 public:
+    vector <Sommet<C>> sommets;
+    void ajouterArete(Sommet s,Sommet s2, int poids);
+    void afficher();
+    //ostream& operator << (ostream&, Graphe g);
     void ajouterSommet(Sommet s);
-    void supprimerSommet(Sommet s);
-    ostream& operator << (ostream &os, const Graphe &g);
-    void parcoursLargeur();
-    void parcoursProfondeur();
+
 };
 
 

@@ -19,6 +19,7 @@ public:
     list<Sommet<C>> list_plus_court_chemin;
 
     Sommet(C v);
+    Sommet();
     void ajout(Sommet,int);
     void ajouterAdj(Sommet,int);
     map<Sommet<C>,int> getMap() const;
@@ -32,6 +33,7 @@ public:
     void detruireSommet();
     void detruireArete();
     void afficher();
+    void afficher_list();
 };
 
 

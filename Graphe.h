@@ -13,7 +13,7 @@
 template < class C > class Graphe {
 public:
     vector <Sommet<C>> sommets;
-    Graphe();
+
     //void ajouterArete(Sommet,Sommet,int);
     //void afficher();
     //ostream& operator << (ostream&, Graphe g);

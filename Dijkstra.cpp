@@ -6,21 +6,35 @@
 
 
 template <class C> Graphe<C> Dijkstra<C>::plus_court_chemin(Graphe<C> graph,Sommet<C> source){
+
     source.distance = 0;
 
     vector<Sommet<C>> sommets_Traiter;
     vector<Sommet<C>> sommets_non_Traiter;
 
     sommets_non_Traiter.push_back(source);
-
+    int n = 0;
     while(sommets_non_Traiter.size() != 0 ) {
+        n++;
         Sommet<C> sommet_Actuel = Sommet_plus_petite_distance(sommets_non_Traiter);
-        sommets_non_Traiter.erase(sommet_Actuel);
+
+        //probleme sur cette boucle
+        vector<Sommet<char>>::iterator it;
+
+        for(it = sommets_non_Traiter.begin();it != sommets_non_Traiter.end() ; it++ ){
+            cout << n << endl;
+            if(*it == sommet_Actuel){
+                sommets_non_Traiter.erase(it);
+                break;
+            }
+
+        }
+
         map<Sommet<char>, int>::iterator p;
         for (p = sommet_Actuel.listAdj.begin(); p != sommet_Actuel.listAdj.end(); p++) {
              Sommet<C> sommet_Adj = p->first;
              int poids_arete = p->second;
-             if(std::find(sommets_Traiter.begin(), sommets_Traiter.end(), sommet_Adj) != sommets_Traiter.end()) {
+             if(find_in_vector(sommets_Traiter,sommet_Adj)) {
                 //do nothing
              }else{
                  calcule_distance_minimal(sommet_Adj,poids_arete,sommet_Actuel);
@@ -54,4 +68,13 @@ template <class C> void Dijkstra<C>::calcule_distance_minimal(Sommet<C> sommet_a
         plus_court_chemin.push_back(source);
         sommet_adj.list_plus_court_chemin = plus_court_chemin;
     }
+}
+template <class C> bool Dijkstra<C>::find_in_vector(vector<Sommet<C>> sommets, Sommet<C> s){
+    vector<Sommet<char>>::iterator it;
+    for(it = sommets.begin(); it != sommets.end(); it++){
+        if(*it == s){
+            return true;
+        }
+    }
+    return false;
 }

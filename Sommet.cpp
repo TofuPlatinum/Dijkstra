@@ -9,6 +9,7 @@ template <class C> Sommet<C>::Sommet(C v){
     val = v;
     distance = 9999;
 }
+template <class C> Sommet<C>::Sommet(){}
 template <class C> map<Sommet<C>,int> Sommet<C>::getMap() const{
     return listAdj;
 }
@@ -45,8 +46,16 @@ template <class C> void Sommet<C>::ajouterAdj(Sommet s, int i) {
 
 template <class C> void Sommet<C>::afficher() {
     map<Sommet<char>, int>::iterator p;
+    cout << val << "  -> \n";
     for (p = listAdj.begin(); p != listAdj.end(); p++) {
         cout << p->first.val << ": " << p->second;
+        cout << std::endl;
+    }
+}
+template <class C> void Sommet<C>::afficher_list() {
+    list<Sommet<char>>::iterator p;
+    for (p = list_plus_court_chemin.begin(); p != list_plus_court_chemin.end(); p++) {
+        cout << p->val;
         cout << std::endl;
     }
 }

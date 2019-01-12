@@ -20,8 +20,8 @@ public:
 
     Sommet(C v);
     Sommet();
-    void ajout(Sommet,int);
-    void ajouterAdj(Sommet,int);
+    void ajout(Sommet&,int);
+    void ajouterAdj(Sommet&,int);
     map<Sommet<C>,int> getMap() const;
     list<Sommet<C>> getPlusCourtChemin() const;
     bool operator <(const Sommet&);

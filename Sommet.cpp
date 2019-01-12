@@ -17,13 +17,13 @@ template <class C> list<Sommet<C>> Sommet<C>::getPlusCourtChemin() const{
     return list_plus_court_chemin;
 }
 
-template <class C> void Sommet<C>::ajout(Sommet s, int i){
+template <class C> void Sommet<C>::ajout(Sommet& s, int i){
 //s.getMap().insert(s,i);
     s.listAdj.insert(pair<Sommet<C>,int>(*this , i));
     this->listAdj.insert(pair<Sommet<C>,int>(s,i));
 }
 
-template <class C> void Sommet<C>::ajouterAdj(Sommet s, int i) {
+template <class C> void Sommet<C>::ajouterAdj(Sommet& s, int i) {
     bool valide = true;
     if(s==*this){
         cout << "impossible d'ajouter " << s.val << " dans " << this->val << endl;

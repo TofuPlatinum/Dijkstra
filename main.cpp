@@ -38,27 +38,28 @@ int main(){
     g.ajouterSommet(sF);
 
     Dijkstra<char> d;
-    g = d.plus_court_chemin(g,sA);
+    map<Sommet<char>,list<Sommet<char>>> dij;
+    dij = d.plus_court_chemin(g,sA);
     // erase marche bien;
 
 
-    vector<Sommet<char>> vec;
-    vec.push_back(sA);
-    vec.push_back(sB);
-    vec.push_back(sC);
-    vec.push_back(sD);
-    vec.push_back(sE);
 
 
-   /* sA.afficher();
+
+    /*sA.afficher();
     sB.afficher();
     sC.afficher();
-    sD.afficher(); */
+    sD.afficher();
+    sE.afficher();
+    sF.afficher(); */
 
-    sA.afficher_list();
-    sB.afficher_list();
-    sC.afficher_list();
-    sD.afficher_list();
-    sE.afficher_list();
-    sF.afficher_list();
+    map<Sommet<char>, list<Sommet<char>>>::iterator p;
+    for (p = dij.begin(); p != dij.end(); p++) {
+        cout << p->first.val << " plus court chemin : ";
+        list<Sommet<char>>::iterator it;
+        for (it = p->second.begin(); it != p->second.end(); it++) {
+            cout << it->val << " ";
+        }
+        cout << endl;
+    }
 }

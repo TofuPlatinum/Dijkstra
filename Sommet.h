@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <map>
+#include <list>
 
 using namespace std;
 template < class C > class Sommet {
@@ -14,14 +15,19 @@ template < class C > class Sommet {
 public:
     C val;
     map<Sommet<C>, int> listAdj;
+    int distance;
+    list<Sommet<C>> list_plus_court_chemin;
+
+    Sommet(C v);
     void ajout(Sommet,int);
     void ajouterAdj(Sommet,int);
     map<Sommet<C>,int> getMap() const;
+    list<Sommet<C>> getPlusCourtChemin() const;
     bool operator <(const Sommet&);
+    bool operator ==(const Sommet&);
     //friend ostream& operator <<(ostream&, map<Sommet<C>,int> );
     //ostream& operator <<(ostream&, Sommet<C>);
     //friend bool operator <(const Sommet&, Sommet&);
-    Sommet(C v);
 
     void detruireSommet();
     void detruireArete();

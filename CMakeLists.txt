@@ -3,4 +3,4 @@ project(Dijkstra)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Dijkstra main.cpp)
+add_executable(Dijkstra main.cpp Dijkstra.cpp Dijkstra.h)

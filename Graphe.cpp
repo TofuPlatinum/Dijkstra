@@ -3,3 +3,7 @@
 //
 
 #include "Graphe.h"
+
+template <class C> void Graphe<C>::ajouterSommet(Sommet<C> s){
+    this->sommets.push_back(s);
+}

@@ -8,15 +8,16 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-#include <list>
+#include <vector>
 
-template < Class C > class Graphe {
+template < class C > class Graphe {
 public:
     vector <Sommet<C>> sommets;
-    void ajouterArete(Sommet s,Sommet s2, int poids);
-    void afficher();
+    Graphe();
+    //void ajouterArete(Sommet,Sommet,int);
+    //void afficher();
     //ostream& operator << (ostream&, Graphe g);
-    void ajouterSommet(Sommet s);
+    void ajouterSommet(Sommet<C>);
 
 };
 

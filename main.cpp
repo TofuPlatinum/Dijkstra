@@ -40,25 +40,20 @@ int main(){
     Dijkstra<char> d;
     map<Sommet<char>,list<Sommet<char>>> dij;
     dij = d.plus_court_chemin(g,sA);
-    // erase marche bien;
-
-
-
-
 
     /*sA.afficher();
     sB.afficher();
     sC.afficher();
     sD.afficher();
     sE.afficher();
-    sF.afficher(); */
+    sF.afficher();*/
 
     map<Sommet<char>, list<Sommet<char>>>::iterator p;
     for (p = dij.begin(); p != dij.end(); p++) {
         cout << p->first.val << " plus court chemin : ";
         list<Sommet<char>>::iterator it;
         for (it = p->second.begin(); it != p->second.end(); it++) {
-            cout << it->val << " ";
+            cout << it->val;
         }
         cout << endl;
     }

@@ -18,6 +18,7 @@ public:
     //void afficher();
     //ostream& operator << (ostream&, Graphe g);
     void ajouterSommet(Sommet<C>);
+    void setDistance(Sommet<C>,int);
 
 };
 

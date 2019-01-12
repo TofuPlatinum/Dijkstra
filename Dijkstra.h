@@ -14,7 +14,8 @@ public:
     map<Sommet<C>,list<Sommet<C>>> plus_court_chemin(Graphe<C>&,Sommet<C>&);
     Sommet<C> Sommet_plus_petite_distance(vector<Sommet<C>>&);
     list<Sommet<C>> calcule_distance_minimal(Sommet<C>&,int,Sommet<C>&);
-    bool find_in_vector(vector<Sommet<C>>, Sommet<C>);
+    bool is_in_vector(vector<Sommet<C>>, Sommet<C>);
+    Sommet<C>& find_in_vector(vector<Sommet<C>>&, Sommet<C>&);
 };
 
 

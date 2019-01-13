@@ -47,9 +47,7 @@ public:
             for (p = sommet_Actuel.listAdj.begin(); p != sommet_Actuel.listAdj.end(); p++) {
                 Sommet<C> sommet_Adj = sommets.find(p->first);//cherche la correspandance du sommet dans le graphe pour debug
                 int poids_arete = p->second;
-                if(sommets_Traiter.contains(sommet_Adj)) {
-                    //do nothing
-                }else{
+                if(!sommets_Traiter.contains(sommet_Adj)) {
                     list<Sommet<C>> plus_court_chemin = calcule_distance_minimal(sommet_Adj,poids_arete,sommet_Actuel);
                     sommets_non_Traiter.add(sommet_Adj);
                     if((plus_court_chemin.size() == 0 )&&!(sommet_Actuel.val == source.val) ){
@@ -58,7 +56,6 @@ public:
                         resultat.insert(pair<Sommet<C>,list<Sommet<C>>>(sommet_Actuel,plus_court_chemin));
                     }
                 }
-
             }
             sommets_Traiter.add(sommet_Actuel);
         }
@@ -75,7 +72,6 @@ public:
         if((source_distance + poids_arete) < sommet_adj.distance ){
             sommet_adj.distance = source_distance + poids_arete;
             sommet_adj.list_plus_court_chemin.push_back(sommet_actuel);
-            //graph.setDistance(sommet_adj, source_distance+poids_arete);
             plus_court_chemin = sommet_actuel.getPlusCourtChemin();
 
 

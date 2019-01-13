@@ -48,12 +48,7 @@ int main(){
 
     resultat = g.plus_court_chemin(sA);
 
-    /*sA.afficher();
-    sB.afficher();
-    sC.afficher();
-    sD.afficher();
-    sE.afficher();
-    sF.afficher();*/
+    //affichage résultat
 
     map<Sommet<char>, list<Sommet<char>>>::iterator p;
     for (p = resultat.begin(); p != resultat.end(); p++) {

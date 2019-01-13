@@ -23,9 +23,9 @@ int main(){
     sB.ajouterAdj(sD,12);
     sB.ajouterAdj(sF,15);
 
-   // sC.ajouterAdj(sE,10);
+    sC.ajouterAdj(sE,10);
 
-    sE.ajouterAdj(sC,10);
+
 
     sD.ajouterAdj(sE,2);
     sD.ajouterAdj(sF,1);

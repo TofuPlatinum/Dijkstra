@@ -35,8 +35,6 @@ public:
         sommets_non_Traiter.add(source);
 
         while(sommets_non_Traiter.size() != 0 ) {
-            cout << "Début de boucle --------------------" << endl;
-
             Sommet<C> sommet_Actuel = sommets_non_Traiter.extract_min();
 
             if(sommet_Actuel.val == source.val){
@@ -49,31 +47,20 @@ public:
             for (p = sommet_Actuel.listAdj.begin(); p != sommet_Actuel.listAdj.end(); p++) {
                 Sommet<C> sommet_Adj = sommets.find(p->first);//cherche la correspandance du sommet dans le graphe pour debug
                 int poids_arete = p->second;
-                if(sommet_Actuel.val == 'B'){
-                    cout << "cest le tour de B : " << sommet_Adj.val<<endl;
-                }
                 if(sommets_Traiter.contains(sommet_Adj)) {
                     //do nothing
                 }else{
                     list<Sommet<C>> plus_court_chemin = calcule_distance_minimal(sommet_Adj,poids_arete,sommet_Actuel);
                     sommets_non_Traiter.add(sommet_Adj);
-                    cout << "Ajout de "<< sommet_Adj.val <<" Sommet NOOON traité " << endl;
-
                     if((plus_court_chemin.size() == 0 )&&!(sommet_Actuel.val == source.val) ){
                         //do nothing
-                        cout << "plus court chemin ERREUR : " << sommet_Actuel.val << endl;
                     }else{
-
                         resultat.insert(pair<Sommet<C>,list<Sommet<C>>>(sommet_Actuel,plus_court_chemin));
-                        cout << "insertion dans resultat pour : " << sommet_Actuel.val << endl;
-
                     }
                 }
 
             }
             sommets_Traiter.add(sommet_Actuel);
-
-            cout << "SIZE NON TRAITER "<< sommets_non_Traiter.size()<< endl;
         }
         cout << "FIN DE  DIJKSTRA" << endl;
         return resultat;
@@ -84,7 +71,6 @@ public:
 
         int source_distance = sommet_actuel.distance;
         cout << "distance actuel de la source pour " << sommet_actuel.val << " : " << source_distance << endl;
-        cout << source_distance + poids_arete << endl;
         list<Sommet<C>> plus_court_chemin;
         if((source_distance + poids_arete) < sommet_adj.distance ){
             sommet_adj.distance = source_distance + poids_arete;

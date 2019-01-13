@@ -26,7 +26,7 @@ public:
    void ajouterSommet(Sommet<C> &s){
        sommets.add(s);
    }
-    map<Sommet<C>,list<Sommet<C>>> plus_court_chemin(Sommet<C>& source){
+    map<Sommet<C>,list<Sommet<C>>> dijkstra(Sommet<C>& source){
 
         Tas<C> sommets_Traiter;
         Tas<C> sommets_non_Traiter;

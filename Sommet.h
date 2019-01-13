@@ -33,7 +33,6 @@ public:
     }
 
     void ajout(Sommet& s, int i){
-//s.getMap().insert(s,i);
         s.listAdj.insert(pair<Sommet<C>,int>(*this , i));
         this->listAdj.insert(pair<Sommet<C>,int>(s,i));
     }
@@ -51,7 +50,6 @@ public:
                     valide = false;
                 }
             }
-
         }
         if(valide){
             ajout(s, i);
@@ -106,8 +104,6 @@ public:
             return 0;
         }
     }
-    void detruireSommet();
-    void detruireArete();
 };
 
 

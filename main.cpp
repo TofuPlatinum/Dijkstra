@@ -17,20 +17,18 @@ int main(){
     Sommet<char> sF = Sommet<char>('F');
 
 
-    sA.ajouterAdj(sB,10);
-    sA.ajouterAdj(sC,15);
+    sA.ajouterAdj(sB,5);
+    sA.ajouterAdj(sC,12);
 
-    sB.ajouterAdj(sD,12);
-    sB.ajouterAdj(sF,15);
+    sB.ajouterAdj(sD,6);
+    sB.ajouterAdj(sF,10);
 
-    sC.ajouterAdj(sE,10);
+    sC.ajouterAdj(sE,8);
 
+    sD.ajouterAdj(sE,3);
+    sD.ajouterAdj(sF,2);
 
-
-    sD.ajouterAdj(sE,2);
-    sD.ajouterAdj(sF,1);
-
-    sF.ajouterAdj(sE,5);
+    sF.ajouterAdj(sE,6);
 
     vector<Sommet<char>> sommets;
     sommets.push_back(sA);
@@ -46,7 +44,7 @@ int main(){
 
     map<Sommet<char>,list<Sommet<char>>> resultat;
 
-    resultat = g.plus_court_chemin(sA);
+    resultat = g.dijkstra(sA);
 
     //affichage résultat
 

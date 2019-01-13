@@ -30,14 +30,14 @@ private:
             plus_petit_index = droite_;
         }
         if(i != plus_petit_index){
-            echange(plus_petit_index,i,tas);
+            echange(plus_petit_index,i);
             tasser(plus_petit_index);
         }
     }
-    void echange(int i, int j, vector<Sommet<C>> &vec){
-        Sommet<C> n = vec[i];
-        vec[i] = vec[j];
-        vec[j] = n;
+    void echange(int i, int j){
+        Sommet<C> n = tas[i];
+        tas[i] = tas[j];
+        tas[j] = n;
     }
 public:
     Tas(vector<Sommet<C>>& vec){
@@ -70,7 +70,7 @@ public:
     }
     Sommet<C> extract_min(){
         Sommet<C> n = tas.front();
-        echange(0,taille - 1, tas );
+        echange(0,taille - 1);
         taille--;
         tasser(0);
         return n;
